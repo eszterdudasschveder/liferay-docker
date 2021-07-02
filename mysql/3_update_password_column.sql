@@ -1,0 +1,1 @@
+UPDATE lportal.User_ set password_="liferay", passwordEncrypted=0;

@@ -1,3 +1,4 @@
+.DS_Store
 downloads
-logs-*
-temp-*
+liferay_portal/logs-*
+liferay_portal/temp-*

@@ -1,0 +1,21 @@
+services:
+    mysql:
+        environment:
+            - MYSQL_ROOT_PASSWORD=admin
+            - MYSQL_DATABASE=lportal
+            - MYSQL_USER=admin
+            - MYSQL_PASSWORD=admin
+        image:  patcher_mysql
+        ports:
+            - 3306:3306
+
+    portal:
+        image: patcher_portal
+        volumes:
+            - ${LIFERAY_PLUGINS_EE}:/mnt/liferay-plugins-ee
+            - ${MOUNT_DIR}:/mnt/liferay
+            - ${USR_LOCAL_LIFERAY}:/usr/local/liferay
+        ports:
+            - 8080:8080
+
+version: '3.6'
